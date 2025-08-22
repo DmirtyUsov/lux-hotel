@@ -1,0 +1,21 @@
+{
+  "name": "Lux Hotel - SAP CAP - dev container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sapse.vscode-cds",
+        "dbaeumer.vscode-eslint",
+        "humao.rest-client",
+        "qwtel.sqlite-viewer",
+        "mechatroner.rainbow-csv",
+        "esbenp.prettier-vscode",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  "forwardPorts": [4004],
+  "remoteUser": "node"
+}
