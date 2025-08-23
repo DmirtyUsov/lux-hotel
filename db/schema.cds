@@ -18,7 +18,13 @@ entity Campaigns : cuid, managed {
   StartDate : Date                                      @mandatory;
   EndDate   : Date                                      @mandatory;
   to_Status : Association to CampaignStatus default 'D' @mandatory
+}
 
+entity Tariffs : cuid, managed {
+  to_Room     : Association to many Rooms     @mandatory;
+  to_Campaign : Association to many Campaigns @mandatory;
+  GuestsNum   : Integer                       @mandatory;
+  PerNight    : Decimal                       @mandatory;
 }
 
 //
