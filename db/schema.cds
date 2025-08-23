@@ -11,6 +11,7 @@ entity Rooms : cuid {
   to_Floor : Association to Floor default 'First'     @mandatory;
   to_View  : Association to RoomView default 'Forest' @mandatory;
   to_Type  : Association to RoomType                  @mandatory;
+  Tariffs : Association to many Tariffs on Tariffs.to_Room = $self; 
 }
 
 entity Campaigns : cuid, managed {

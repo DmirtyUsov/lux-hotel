@@ -1,0 +1,5 @@
+code,name,descr
+D,Draft
+A,Active
+X,Canceled
+F,Finished
