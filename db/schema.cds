@@ -12,23 +12,22 @@ entity Rooms : cuid {
   to_Floor : Association to Floor default 'First'     @mandatory;
   to_View  : Association to RoomView default 'Forest' @mandatory;
   to_Type  : Association to RoomType                  @mandatory;
-  Tariffs  : Association to many Tariffs
-               on Tariffs.to_Room = $self;
 }
 
 entity Campaigns : cuid, managed {
-  Name      : String                                    @mandatory;
-  StartDate : Date                                      @mandatory;
-  EndDate   : Date                                      @mandatory;
-  to_Status : Association to CampaignStatus default 'D' @mandatory;
-//Tariffs: Association to
+  Name       : String                                    @mandatory;
+  StartDate  : Date                                      @mandatory;
+  EndDate    : Date                                      @mandatory;
+  to_Status  : Association to CampaignStatus default 'D' @mandatory;
+  to_Tariffs : Composition of many Tariffs
+                 on to_Tariffs.to_Campaign = $self;
 }
 
-entity Tariffs : cuid, managed {
-  to_Room     : Association to Rooms;
-  to_Campaign : Association to many Campaigns @mandatory;
-  GuestsNum   : Integer                       @mandatory;
-  PerNight    : Decimal                       @mandatory;
+entity Tariffs : cuid {
+  key to_Campaign : Association to Campaigns;
+      Room        : Association to Rooms;
+      GuestsNum   : Integer @mandatory;
+      PerNight    : Decimal @mandatory;
 }
 
 //
