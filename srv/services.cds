@@ -1,5 +1,6 @@
 using {org.luxhotel as hotel} from '../db/schema';
 
+@impl: '/srv/admin.service.js'
 service admin {
   entity Rooms     as projection on hotel.Rooms;
   entity Campaigns as projection on hotel.Campaigns;
