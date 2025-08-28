@@ -1,0 +1,36 @@
+
+@serviceName = admin
+
+###
+# @name QueryRoomTypes
+GET http://localhost:4004/odata/v4/{{serviceName}}/RoomType
+
+###
+# @name QueryRooms
+GET http://localhost:4004/odata/v4/{{serviceName}}/Rooms
+
+### 
+# @name CreateNewRoom
+POST http://localhost:4004/odata/v4/{{serviceName}}/Rooms
+Content-Type: application/json
+
+{
+  "Number": "200",
+  "to_View_code" : "Forest",
+  "to_Floor_code": "2",
+  "to_Type_code" : "S"
+}
+
+### 
+# @name QueryRoomsAgain
+GET http://localhost:4004/odata/v4/{{serviceName}}/Rooms
+
+@room_ID = {{ QueryRoomsAgain.response.body.value[1].ID }}
+
+### 
+# @name ReadSpecificRoomEntity
+GET http://localhost:4004/odata/v4/{{serviceName}}/Rooms({{room_ID}})
+
+### 
+# @name DeleteSpecificRoomEntity
+DELETE http://localhost:4004/odata/v4/{{serviceName}}/Rooms({{room_ID}})
