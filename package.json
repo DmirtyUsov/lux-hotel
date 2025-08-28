@@ -21,5 +21,23 @@
   },
   "scripts": {
     "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "[database]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "lux-hotel.sqlite"
+          }
+        },
+        "[development]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
+        }
+      }
+    }
   }
 }
