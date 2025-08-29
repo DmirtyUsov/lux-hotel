@@ -23,7 +23,8 @@
     "prettier": "3.6.2"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-admin": "cds watch --open admin/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -54,5 +55,8 @@
     "server": {
       "index": true
     }
-  }
+  },
+  "sapux": [
+    "app/admin"
+  ]
 }
