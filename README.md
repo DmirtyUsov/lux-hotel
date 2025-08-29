@@ -23,3 +23,9 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+## TODO
+Add to devcontainer   
+[Install the Cloud Foundry Command Line Interface (CLI)](https://developers.sap.com/tutorials/cp-cf-download-cli.html)   
+[MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/)   
+[MultiApps CF CLI plugin](https://github.com/cloudfoundry/multiapps-cli-plugin/blob/master/README.md)
