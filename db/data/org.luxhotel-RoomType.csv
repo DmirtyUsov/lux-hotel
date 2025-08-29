@@ -1,4 +1,4 @@
 code,name,descr
-T,Twin
-D,Double
-S,Suite
+T,Twin,Standard room
+D,Double,Room with king-sized bed
+S,Suite,Luxuriously Sized Room

@@ -1,5 +1,5 @@
 code,name,descr
-D,Draft
-A,Active
-X,Canceled
-F,Finished
+D,Draft,For drafts
+A,Active,Actual
+X,Canceled,Can't use this campaign
+F,Finished,Campaign ended

@@ -9,7 +9,7 @@ namespace org.luxhotel;
 entity Rooms : cuid {
   @assert.unique: {Number: [Number]}
   Number   : String(3)                                @mandatory;
-  to_Floor : Association to Floor default 'First'     @mandatory;
+  to_Floor : Association to Floor default 1           @mandatory;
   to_View  : Association to RoomView default 'Forest' @mandatory;
   to_Type  : Association to RoomType                  @mandatory;
 }
