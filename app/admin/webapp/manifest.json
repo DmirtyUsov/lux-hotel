@@ -24,6 +24,20 @@
           "odataVersion": "4.0"
         }
       }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "Tariffs-display": {
+          "semanticObject": "Tariffs",
+          "action": "display",
+          "title": "{{Tariffs-display.flpTitle}}",
+          "subTitle": "{{Tariffs-display.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
     }
   },
   "sap.ui": {
