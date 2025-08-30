@@ -63,7 +63,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.fe.macros": {}
       }
     },
     "contentDensities": {
@@ -135,6 +136,19 @@
                     "type": "ResponsiveTable"
                   }
                 }
+              },
+              "views": {
+                "paths": [
+                  {
+                    "key": "tableView",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#tableView"
+                  },
+                  {
+                    "key": "tableView1",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#tableView",
+                    "entitySet": "Rooms"
+                  }
+                ]
               }
             }
           }
@@ -151,6 +165,20 @@
                 "to_Tariffs": {
                   "detail": {
                     "route": "TariffsObjectPage"
+                  }
+                }
+              },
+              "content": {
+                "body": {
+                  "sections": {
+                    "Tariffs": {
+                      "template": "admin.ext.fragment.Tariffs",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "GeneratedFacet1"
+                      },
+                      "title": "Tariffs"
+                    }
                   }
                 }
               }

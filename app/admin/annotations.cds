@@ -96,6 +96,21 @@ annotate service.Campaigns with @(
         TypeName : '{i18n>Campaing}',
         TypeNamePlural : '{i18n>Campaigns}',
     },
+    UI.SelectionPresentationVariant #tableView : {
+        $Type : 'UI.SelectionPresentationVariantType',
+        PresentationVariant : {
+            $Type : 'UI.PresentationVariantType',
+            Visualizations : [
+                '@UI.LineItem',
+            ],
+        },
+        SelectionVariant : {
+            $Type : 'UI.SelectionVariantType',
+            SelectOptions : [
+            ],
+        },
+        Text : 'Campaings',
+    },
 );
 
 annotate service.CampaignStatus with {
@@ -163,6 +178,78 @@ annotate service.Tariffs with @(
                 Label : 'to_Campaign_ID',
             },
         ],
+    },
+    UI.LineItem #tableMacro : [
+        {
+            $Type : 'UI.DataField',
+            Value : Room.to_Floor.name,
+            Label : 'Floor',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Room.Number,
+            Label : 'Room #',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : GuestsNum,
+            Label : 'Guests',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Room.to_Type.name,
+            Label : 'Room Type',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Room.to_View.name,
+            Label : 'View',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : PerNight,
+            Label : 'PerNight',
+        },
+    ],
+);
+
+annotate service.Rooms with @(
+    UI.LineItem #tableView : [
+        {
+            $Type : 'UI.DataField',
+            Value : to_Floor.name,
+            Label : 'Floor',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Number,
+            Label : 'Room #',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : to_Type.name,
+            Label : 'Room Type',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : to_View.name,
+            Label : 'View',
+        },
+    ],
+    UI.SelectionPresentationVariant #tableView : {
+        $Type : 'UI.SelectionPresentationVariantType',
+        PresentationVariant : {
+            $Type : 'UI.PresentationVariantType',
+            Visualizations : [
+                '@UI.LineItem#tableView',
+            ],
+        },
+        SelectionVariant : {
+            $Type : 'UI.SelectionVariantType',
+            SelectOptions : [
+            ],
+        },
+        Text : 'Rooms',
     },
 );
 
