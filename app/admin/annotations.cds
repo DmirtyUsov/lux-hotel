@@ -93,7 +93,7 @@ annotate service.Campaigns with @(
             $Type : 'UI.DataField',
             Value : Name,
         },
-        TypeName : '{i18n>Campaing}',
+        TypeName : '{i18n>Campaign}',
         TypeNamePlural : '{i18n>Campaigns}',
     },
     UI.SelectionPresentationVariant #tableView : {
@@ -109,7 +109,7 @@ annotate service.Campaigns with @(
             SelectOptions : [
             ],
         },
-        Text : 'Campaings',
+        Text : 'Campaigns',
     },
 );
 
@@ -208,7 +208,7 @@ annotate service.Tariffs with @(
         {
             $Type : 'UI.DataField',
             Value : PerNight,
-            Label : 'PerNight',
+            Label : 'Tariff Per Night',
         },
     ],
 );
