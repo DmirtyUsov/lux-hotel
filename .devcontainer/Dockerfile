@@ -8,9 +8,9 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends \
     curl git sqlite3 entr source-highlight
 
-# Install SAP CAP SDK globally
+# Install SAP CAP SDK & mbt globally
 USER node
-RUN npm install -g @sap/cds-dk@$CAPVER
+RUN npm install -g @sap/cds-dk@$CAPVER mbt
 
 # vi mode everywhere and nicer prompt KTHXBAI
 RUN cat <<EOBASHRC >> /home/node/.bashrc

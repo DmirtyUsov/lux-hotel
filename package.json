@@ -7,7 +7,9 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^9",
-    "express": "^4"
+    "express": "^4",
+    "@sap/xssec": "^4",
+    "@cap-js/hana": "^2"
   },
   "engines": {
     "node": ">=20"
@@ -15,11 +17,46 @@
   "devDependencies": {
     "@cap-js/cds-types": "^0.13.0",
     "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": ">=8",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "3.6.2"
   },
   "scripts": {
-    "start": "cds-serve"
-  }
+    "start": "cds-serve",
+    "watch-admin": "cds watch --open admin/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "[database]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "lux-hotel.sqlite"
+          }
+        },
+        "[development]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
+        }
+      },
+      "[production]": {
+        "auth": "xsuaa",
+        "db": {
+          "kind": "hana"
+        }
+      }
+    },
+    "fiori": {
+      "preview": true
+    },
+    "server": {
+      "index": true
+    }
+  },
+  "sapux": [
+    "app/admin"
+  ]
 }
